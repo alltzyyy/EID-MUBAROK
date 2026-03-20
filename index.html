@@ -5,80 +5,120 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Selamat Hari Raya ❤️</title>
     <style>
+        /* CSS RESET */
+        body, h1, p, button { margin: 0; padding: 0; border: none; }
+
         body {
-            margin: 0;
-            padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* Latar Belakang Gradasi Lembut & Pola Halus */
+            background: 
+                radial-gradient(circle at center, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%),
+                linear-gradient(135deg, #fffcf0 0%, #ffe0e0 100%);
+            font-family: 'Playfair Display', serif; /* Font Serif yang Elegan */
+            overflow: hidden; /* Mencegah scrollbar muncul karena animasi */
+            position: relative;
         }
+
+        /* Teks Styling */
+        h1 { color: #d35400; font-size: 32px; margin-bottom: 20px; text-shadow: 1px 1px 2px rgba(0,0,0,0.1); }
+        p { color: #7f8c8d; font-size: 18px; line-height: 1.8; font-family: 'Segoe UI', sans-serif; } /* Font sans-serif untuk isi agar mudah dibaca */
+
+        /* Kartu Ucapan */
         .card {
-            background: white;
-            padding: 40px 30px;
-            border-radius: 20px;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            background: rgba(255, 255, 255, 0.9);
+            padding: 50px 40px;
+            border-radius: 30px;
+            box-shadow: 0 20px 50px rgba(211, 84, 0, 0.15); /* Shadow berwarna jingga hangat */
             text-align: center;
-            max-width: 400px;
+            max-width: 450px;
             width: 85%;
+            border: 2px solid #fce4ec; /* Border tipis pink muda */
+            z-index: 10; /* Memastikan kartu di atas animasi jatuh */
+            position: relative;
         }
-        h1 {
-            color: #2c3e50;
-            font-size: 26px;
-            margin-bottom: 15px;
-        }
-        p {
-            color: #555;
-            font-size: 16px;
-            line-height: 1.6;
-        }
+
+        /* Tombol */
         .btn {
-            margin-top: 25px;
-            padding: 12px 25px;
-            background-color: #2ecc71;
+            margin-top: 30px;
+            padding: 15px 30px;
+            background-color: #e74c3c; /* Merah hangat */
             color: white;
-            border: none;
             border-radius: 50px;
             cursor: pointer;
-            font-size: 16px;
+            font-size: 18px;
             font-weight: bold;
-            transition: transform 0.2s, background 0.3s;
-            box-shadow: 0 4px 6px rgba(46, 204, 113, 0.3);
+            font-family: 'Segoe UI', sans-serif;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
         }
         .btn:hover {
-            background-color: #27ae60;
-            transform: translateY(-2px);
+            background-color: #c0392b;
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 20px rgba(231, 76, 60, 0.5);
         }
+
+        /* Pesan Tersembunyi */
         .hidden-message {
             display: none;
-            margin-top: 25px;
-            padding: 20px;
-            background-color: #f9ebea;
+            margin-top: 30px;
+            padding: 25px;
+            background-color: #fff5f5;
             border-left: 5px solid #e74c3c;
-            border-radius: 8px;
+            border-radius: 10px;
             text-align: left;
             font-style: italic;
-            animation: fadeIn 0.5s ease-in-out;
+            color: #c0392b;
+            animation: fadeInSlide 0.6s ease-out;
+            box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
         }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-10px); }
+        @keyframes fadeInSlide {
+            from { opacity: 0; transform: translateY(-15px); }
             to { opacity: 1; transform: translateY(0); }
         }
+
+        /* --- ANIMASI JATUH (KETUPAT-HATI) --- */
+        .heart-ketupat {
+            position: absolute;
+            color: rgba(231, 76, 60, 0.6); /* Warna merah semi-transparan */
+            font-size: 20px;
+            user-select: none;
+            pointer-events: none; /* Agar tidak mengganggu klik */
+            animation: fall linear infinite;
+        }
+
+        /* Gabungan Ketupat dan Hati menggunakan simbol unicode */
+        .heart-ketupat::before {
+            content: '\2764'; /* Simbol Hati */
+        }
+        .heart-ketupat::after {
+            content: '\2666'; /* Simbol Berlian (sebagai representasi ketupat) */
+            font-size: 0.8em;
+            margin-left: -5px;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+        }
+
+        /* Menambahkan font Google untuk sentuhan romantis */
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
     </style>
 </head>
 <body>
 
 <div class="card">
     <h1>Selamat Hari Raya! ✨</h1>
-    <p>Minal Aidin Wal Faizin, mohon maaf lahir dan batin ya.</p>
-    <p>Semoga di hari yang fitri ini, kita selalu diberikan kebahagiaan dan keberkahan.</p>
+    <p>Di hari yang suci ini, Minal Aidin Wal Faizin, mohon maaf lahir dan batin.</p>
+    <p>Semoga kedamaian dan kebahagiaan hari raya menyelimuti hati kita, sebagaimana kasih sayang yang selalu kita jaga.</p>
     
-    <button class="btn" onclick="showMessage()">Ada pesan khusus buat kamu 💌</button>
+    <button class="btn" onclick="showMessage()">Ada pesan kecil dari hatiku 💌</button>
     
     <div id="secretMessage" class="hidden-message">
-        Terima kasih sudah selalu sabar dan support aku. Maaf ya kalau aku sering sibuk tenggelam dengan draf-draf tulisan dan risetku akhir-akhir ini. Mari kita terus mengukir sejarah indah kita bersama-sama ke depannya. Love you! ❤️
+        Terima kasih sudah menjadi bagian terindah dalam hidupku. Di setiap takbir yang berkumandang, terselip doa agar kita selalu bersama, saling menguatkan, dan mengukir tawa. Maafkan segala khilafku ya. Aku mencintaimu, dulu, sekarang, dan selamanya. ❤️
     </div>
 </div>
 
@@ -91,6 +131,36 @@
             msg.style.display = "none";
         }
     }
+
+    // --- SCRIPT UNTUK MEMBUAT EFEK JATUH ---
+    function createHeartKetupat() {
+        const heartKetupat = document.createElement('div');
+        heartKetupat.classList.add('heart-ketupat');
+        
+        // Posisi horizontal acak
+        heartKetupat.style.left = Math.random() * 100 + 'vw';
+        
+        // Ukuran acak
+        const size = Math.random() * 15 + 15 + 'px';
+        heartKetupat.style.fontSize = size;
+        
+        // Durasi animasi acak (kecepatan jatuh)
+        const duration = Math.random() * 3 + 2 + 's';
+        heartKetupat.style.animationDuration = duration;
+        
+        // Transparansi acak
+        heartKetupat.style.opacity = Math.random() * 0.5 + 0.3;
+
+        document.body.appendChild(heartKetupat);
+
+        // Hapus elemen setelah animasi selesai agar tidak menumpuk
+        setTimeout(() => {
+            heartKetupat.remove();
+        }, parseFloat(duration) * 1000);
+    }
+
+    // Buat elemen baru setiap 300ms
+    setInterval(createHeartKetupat, 300);
 </script>
 
 </body>
