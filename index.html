@@ -1,30 +1,39 @@
-<!DOCTYPE html>
-<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Hari Raya zoyy</title>
     <title>Selamat Hari Raya Idul Fitri</title>
-    <style>
+<style>
         /* Mengambil font dari Google Fonts */
         @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;600&display=swap');
 
-        /* CSS RESET */
+/* CSS RESET */
+        body, h1, p, button { margin: 0; padding: 0; border: none; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+body {
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 100vh;
+            /* Latar Belakang Gradasi Lembut & Pola Halus */
+            background: 
+                radial-gradient(circle at center, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%),
+                linear-gradient(135deg, #fffcf0 0%, #ffe0e0 100%);
+            font-family: 'Playfair Display', serif; /* Font Serif yang Elegan */
+            overflow: hidden; /* Mencegah scrollbar muncul karena animasi */
             /* Latar Belakang Gradasi Warna Senja yang Hangat */
             background: linear-gradient(135deg, #2c3e50, #bdc3c7, #f39c12, #e74c3c);
             background-size: 400% 400%;
             animation: gradientBG 15s ease infinite;
             font-family: 'Poppins', sans-serif;
             overflow: hidden; /* Mencegah scrollbar karena efek cahaya */
-            position: relative;
-        }
+position: relative;
+}
 
+        /* Teks Styling */
+        h1 { color: #d35400; font-size: 32px; margin-bottom: 20px; text-shadow: 1px 1px 2px rgba(0,0,0,0.1); }
+        p { color: #7f8c8d; font-size: 18px; line-height: 1.8; font-family: 'Segoe UI', sans-serif; } /* Font sans-serif untuk isi agar mudah dibaca */
         /* Animasi Latar Belakang Bergerak Halus */
         @keyframes gradientBG {
             0% { background-position: 0% 50%; }
@@ -32,20 +41,37 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* Kartu Ucapan */
-        .card {
+/* Kartu Ucapan */
+.card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 50px 40px;
+            border-radius: 30px;
+            box-shadow: 0 20px 50px rgba(211, 84, 0, 0.15); /* Shadow berwarna jingga hangat */
             background: rgba(255, 255, 255, 0.95);
             padding: 50px 30px;
             border-radius: 20px;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-            text-align: center;
+text-align: center;
+            max-width: 450px;
+            width: 85%;
+            border: 2px solid #fce4ec; /* Border tipis pink muda */
+            z-index: 10; /* Memastikan kartu di atas animasi jatuh */
+            position: relative;
             max-width: 500px;
             width: 90%;
             z-index: 10; /* Di atas efek cahaya */
             border: 1px solid rgba(255, 255, 255, 0.3);
             backdrop-filter: blur(5px);
-        }
+}
 
+        /* Tombol */
+        .btn {
+            margin-top: 30px;
+            padding: 15px 30px;
+            background-color: #e74c3c; /* Merah hangat */
+            color: white;
+            border-radius: 50px;
+            cursor: pointer;
         /* Ikon Ketupat Simpel */
         .icon-ketupat {
             font-size: 40px;
@@ -67,7 +93,11 @@
         h2 {
             font-family: 'Poppins', sans-serif;
             color: #e67e22; /* Warna Oranye Hangat */
-            font-size: 18px;
+font-size: 18px;
+            font-weight: bold;
+            font-family: 'Segoe UI', sans-serif;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
             font-weight: 600;
             margin-bottom: 25px;
             letter-spacing: 1px;
@@ -78,7 +108,11 @@
             width: 60px;
             background: #bdc3c7;
             margin: 0 auto 25px auto;
-        }
+}
+        .btn:hover {
+            background-color: #c0392b;
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 20px rgba(231, 76, 60, 0.5);
 
         p {
             color: #7f8c8d;
@@ -86,39 +120,74 @@
             line-height: 1.8;
             margin-bottom: 15px;
             font-weight: 300;
-        }
+}
 
+        /* Pesan Tersembunyi */
+        .hidden-message {
+            display: none;
         .penutup {
-            margin-top: 30px;
-            font-style: italic;
+margin-top: 30px;
+            padding: 25px;
+            background-color: #fff5f5;
+            border-left: 5px solid #e74c3c;
+            border-radius: 10px;
+            text-align: left;
+font-style: italic;
+            color: #c0392b;
+            animation: fadeInSlide 0.6s ease-out;
+            box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
+        }
+        @keyframes fadeInSlide {
+            from { opacity: 0; transform: translateY(-15px); }
+            to { opacity: 1; transform: translateY(0); }
             color: #34495e;
             font-weight: 400;
-        }
+}
 
+        /* --- ANIMASI JATUH (KETUPAT-HATI) --- */
+        .heart-ketupat {
         /* --- EFEK CAHAYA BOKEH (HANGAT) --- */
         .bokeh-container {
-            position: absolute;
+position: absolute;
+            color: rgba(231, 76, 60, 0.6); /* Warna merah semi-transparan */
+            font-size: 20px;
+            user-select: none;
+            pointer-events: none; /* Agar tidak mengganggu klik */
+            animation: fall linear infinite;
             width: 100%;
             height: 100%;
             top: 0;
             left: 0;
             z-index: 1;
-        }
+}
 
+        /* Gabungan Ketupat dan Hati menggunakan simbol unicode */
+        .heart-ketupat::before {
+            content: '\2764'; /* Simbol Hati */
+        }
+        .heart-ketupat::after {
+            content: '\2666'; /* Simbol Berlian (sebagai representasi ketupat) */
+            font-size: 0.8em;
+            margin-left: -5px;
         .dot {
             position: absolute;
             background-color: rgba(254, 241, 154, 0.6); /* Kuning Hangat Transparan */
             border-radius: 50%;
             animation: twinkle linear infinite;
-        }
+}
 
+        @keyframes fall {
+            0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
         @keyframes twinkle {
             0% { transform: translateY(0) scale(1); opacity: 0; }
             20% { opacity: 1; }
             80% { opacity: 1; }
             100% { transform: translateY(-100px) scale(1.2); opacity: 0; }
-        }
+}
 
+        /* Menambahkan font Google untuk sentuhan romantis */
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
         /* Media Query untuk Mobile */
         @media (max-width: 480px) {
             .card { padding: 40px 20px; }
@@ -126,11 +195,14 @@
             h2 { font-size: 16px; }
             p { font-size: 15px; }
         }
-    </style>
+</style>
 </head>
 <body>
 
 <div class="card">
+    <h1>Selamat Hari Raya Zoyy! ✨</h1>
+    <p>Di hari yang suci ini, Minal Aidin Wal Faizin, mohon maaf lahir dan batin.</p>
+    <p>Semoga kedamaian dan kebahagiaan menyelimuti hari raya kitaaa</p>
     <span class="icon-ketupat">🫔</span> <h1>Selamat Hari Raya Idul Fitri</h1>
     <h2>1 Syawal 14xx H</h2>
     
@@ -139,45 +211,77 @@
     <p><b>Minal Aidin Wal Faizin</b>,<br>Mohon Maaf Lahir dan Batin.</p>
     
     <p>Di hari yang fitri ini, mari kita bersihkan hati dan mempererat tali silaturahmi.</p>
-    
+
+    <button class="btn" onclick="showMessage()">Ada pesan kecil nih dari all 💌</button>
     <p>Semoga kehangatan kekeluargaan, kedamaian, dan keberkahan selalu menyelimuti kita semua, di mana pun kita berada.</p>
-    
+
+    <div id="secretMessage" class="hidden-message">
+        Terima kasih sudah menjadi bagian terindah dalam hidupku. Di setiap takbir yang berkumandang, terselip doa agar kita selalu bersama, saling menguatkan, dan mengukir tawa. Oiyaa, maapin all yaaa klo selama ini aga ngeselinnn, mwehehehe....</div>
     <p class="penutup">Selamat berkumpul bersama keluarga tercinta.</p>
 </div>
 
+<script>
+    function showMessage() {
+        var msg = document.getElementById("secretMessage");
+        if (msg.style.display === "none" || msg.style.display === "") {
+            msg.style.display = "block";
+        } else {
+            msg.style.display = "none";
+        }
+    }
 <div class="bokeh-container" id="bokeh"></div>
 
+    // --- SCRIPT UNTUK MEMBUAT EFEK JATUH ---
+    function createHeartKetupat() {
+        const heartKetupat = document.createElement('div');
+        heartKetupat.classList.add('heart-ketupat');
 <script>
     // --- SCRIPT UNTUK MEMBUAT EFEK CAHAYA BOKEH DYNAMIC ---
     function createBokeh() {
         const container = document.getElementById('bokeh');
         const dot = document.createElement('div');
         dot.classList.add('dot');
-        
+
+        // Posisi horizontal acak
+        heartKetupat.style.left = Math.random() * 100 + 'vw';
         // Ukuran acak antara 10px - 40px
         const size = Math.random() * 30 + 10 + 'px';
         dot.style.width = size;
         dot.style.height = size;
-        
+
+        // Ukuran acak
+        const size = Math.random() * 15 + 15 + 'px';
+        heartKetupat.style.fontSize = size;
         // Posisi acak di layar
         dot.style.top = Math.random() * 100 + 'vh';
         dot.style.left = Math.random() * 100 + 'vw';
-        
+
+        // Durasi animasi acak (kecepatan jatuh)
+        const duration = Math.random() * 3 + 2 + 's';
+        heartKetupat.style.animationDuration = duration;
         // Durasi animasi acak (kecepatan muncul) antara 4s - 9s
         const duration = Math.random() * 5 + 4 + 's';
         dot.style.animationDuration = duration;
-        
+
+        // Transparansi acak
+        heartKetupat.style.opacity = Math.random() * 0.5 + 0.3;
         // Delay acak agar tidak muncul bersamaan
         dot.style.animationDelay = Math.random() * 5 + 's';
 
+        document.body.appendChild(heartKetupat);
         container.appendChild(dot);
 
+        // Hapus elemen setelah animasi selesai agar tidak menumpuk
         // Hapus elemen setelah animasi selesai agar tidak membebani memori
-        setTimeout(() => {
+setTimeout(() => {
+            heartKetupat.remove();
+        }, parseFloat(duration) * 1000);
             dot.remove();
         }, (parseFloat(duration) + parseFloat(dot.style.animationDelay)) * 1000);
-    }
+}
 
+    // Buat elemen baru setiap 300ms
+    setInterval(createHeartKetupat, 300);
     // Buat cahaya baru setiap 400ms
     setInterval(createBokeh, 400);
 
@@ -188,4 +292,3 @@
 </script>
 
 </body>
-</html>
